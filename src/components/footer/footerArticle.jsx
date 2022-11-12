@@ -2,8 +2,8 @@
 
 export default function FooterArticle({idx, image, header, summary }){
   return(
-    <div className="flex mb-5 lg:max-w-[360px] xl:mb-0 ">
-      <div className="min-w-[105px] w-105px bg-black h-fit mr-4">
+    <div className="flex mb-5 lg:max-w-[345px] xl:mb-0 ">
+      <div className="min-w-[100px]  bg-black h-fit mr-4">
         <img src={ image } alt='articlw-img' className=" object-fill w-full h-[140px] "/>
       </div>
       <div className=" flex flex-col justify-between">

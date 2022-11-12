@@ -1,17 +1,16 @@
 import logo from '../../assets/logo.svg';
 import React from 'react';
-export default function Nav(){
 
+export default function Nav({logoRef, item1Ref, item2Ref, item3Ref, item4Ref, item5Ref}){
   const [menu, setMenu] =React.useState(false)
-
   function toggleMenu(){
     setMenu(prev => !prev)
   }
 
   return(
-    <nav className='flex items-center justify-between py-6 lg:py-0 lg:my-10 lg:items-end'>
+    <nav className='flex items-center justify-between py-6 lg:py-10 lg:items-end'>
       <div>
-        <img alt='logo' src = { logo } className=' object-cover w-13 h-7 lg:w-16 lg:h-10' />
+        <img alt='logo' src = { logo } ref= { logoRef } className=' object-cover w-13 h-7 lg:w-16 lg:h-10 opacity-0' />
       </div>
       <div className={`fixed z-10 top-0 left-0 bg-modalBgColor h-screen w-screen overflow-hidden transition-all ease-in duration-300 ${
         menu ? 'block' : 'hidden'
@@ -20,11 +19,11 @@ export default function Nav(){
           menu ? ' animate-[comeout_0.5s_ease-in-out_0.1s_both]' : 'animate-[goout_0.5s_ease-in-out_both]'
         } lg:static lg:w-fit lg:h-fit lg:bg-transparent`}>
           <ul className=' pt-36 lg:pt-0 lg:flex'>
-            <li className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Home</li>
-            <li className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>New</li>
-            <li className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Popular</li>
-            <li className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Trending</li>
-            <li className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Categories</li>
+            <li ref={item1Ref} className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Home</li>
+            <li ref={item2Ref} className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>New</li>
+            <li ref={item3Ref} className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Popular</li>
+            <li ref={item4Ref} className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Trending</li>
+            <li ref={item5Ref} className=' pb-4 lg:pb-0 lg:cursor-pointer lg:text-[15px] hover:text-secondaryHighlightColor lg:pl-0 lg:ml-8 lg:transition-colors lg:ease-in lg:duration-150 text-base font-medium pl-8 text-primaryHeaderColor '>Categories</li>
           </ul>
         </div>
       </div>
